@@ -1,0 +1,23 @@
+Code:
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+df = pd.read_csv('wine.csv',header=None, skiprows=1, usecols=[0,1,2])
+df.columns=['Class label', 'Alcohol', 'Malic Acid']
+print(df)
+output:
+
+
+Code :
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.preprocessing import MinMaxScaler
+df = pd.read_csv('wine.csv',header=None, skiprows=1, usecols=[0,1,2])
+df.columns=['Class label', 'Alcohol', 'Malic Acid']
+print(df)
+scaler=MinMaxScaler()
+df[['Alcohol','Malic Acid']] = scaler.fit_transform(df[['Alcohol', 'Malic Acid']])
+Output :

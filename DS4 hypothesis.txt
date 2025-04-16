@@ -1,0 +1,45 @@
+Code :
+import pandas as pd
+import numpy as np
+import seaborn as sb
+import matplotlib.pyplot as plt
+import warnings
+warnings.filterwarnings('ignore')
+df = sb.load_dataset('mpg')
+df.head()
+Output :
+
+
+df['horsepower'].describe()
+Output :
+
+df['model_year'].describe()
+Output :
+
+bins=[0,75,150,240]
+df['horsepower_new']=pd.cut(df['horsepower'],bins=bins,labels=['l','m','h'])
+df['horsepower_new']
+Output :
+
+ybins=[69,72,74,84]
+label=['t1','t2','t3']
+df['modelyear_new']=pd.cut(df['model_year'],bins=ybins,labels=label)
+df['modelyear_new']
+Output :
+
+df_chi=pd.crosstab(df['horsepower_new'],df['modelyear_new']) df_chi
+print(df_chi)
+output:
+
+from scipy import stats
+stats.chi2_contingency(df_chi)
+print(stats.chi2_contingency(df_chi))
+output:
+
+Code :
+import numpy as np
+import scipy as scipy
+from scipy import stats
+import pandas as pd
+data1=pd.read_csv('data.csv')
+stats.ttest_1samp(data1,155)

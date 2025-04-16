@@ -1,0 +1,16 @@
+Code :
+import pandas as pd
+iris = pd.read_csv('iris.csv')
+iris.head()
+Output :
+
+Code :
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+iris['Code']=le.fit_transform(iris.species)
+iris.head()
+Output :
+
+Code :
+iris.tail()
+Output :
