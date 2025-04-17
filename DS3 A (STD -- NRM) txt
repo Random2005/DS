@@ -21,3 +21,13 @@ print(df)
 scaler=MinMaxScaler()
 df[['Alcohol','Malic Acid']] = scaler.fit_transform(df[['Alcohol', 'Malic Acid']])
 Output :
+
+
+
+
+scaler=MinMaxScaler()
+scaler.fit_transform(df[[/Alcohol','Malic Acid']])
+
+
+from sklearn.preprocessing import StandartScaler
+scaler.fit_transform(df[[/Alcohol','Malic Acid']])
